@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>start page</title>
+
+    
+</head>
+<style>
+    table,th,td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+
+    input {
+        text-align: right;
+    }
+
+    button {
+
+        background-color: yellowgreen;padding: 15px 32px;
+    }
+
+</style>
+<body>
+<h1> Calculation Table / Вычислительная таблица</h1>
+
+<table style="width: 100%">
+    <tr>  <!-- row1 -->
+        <th>Planned Distance, km</th>
+        <th>Talpertie</th>
+        <th>LDM</th>
+        <th>Share</th>
+        <th>Distribute Distance</th>
+    </tr>
+    <tr> <!-- row2 -->
+        <th></th>
+        <th>Talpertie 1</th>
+        <th>
+            <label>Enter LDM:</label>
+            <input type="number" id="ldm1" value="3">
+        </th>
+        <th>
+            <label id="share1">0</label>
+        </th>
+        <th id="distrDist1">0</th>
+    </tr>
+    <tr> <!-- row3 -->
+        <th></th>
+        <th>Talpertie 2</th>
+        <th>
+            <label>Enter LDM:</label>
+            <input type="number" id="ldm2" value="2">
+        </th>
+        <th id="share2">0</th>
+        <th  id="distrDist2">0</th>
+    </tr>
+    <tr> <!-- row4 -->
+        <th>
+            <label>Enter Distance, km:</label>
+            <input type="number" id="EnterDistanceKm" value="300">
+        </th>
+        <th>Talpertie 3</th>
+        <th>
+            <label>Enter LDM:</label>
+            <input type="number" id="ldm3" value="2">
+        </th>
+        <th id="share3">0</th>
+        <th id="distrDist3">0</th>
+    </tr>
+    <tr> <!-- row5 -->
+        <th></th>
+        <th>Talpertie 4</th>
+        <th>
+            <label>Enter LDM:</label>
+            <input type="number" id="ldm4" value="3">
+        </th>
+        <th id="share4">0</th>
+        <th  id="distrDist4">0</th>
+    </tr>
+    <tr> <!-- row6 -->
+        <th></th>
+        <th>Talpertie 5</th>
+        <th>
+            <label>Enter LDM:</label>
+            <input type="number" id="ldm5" value="1">
+        </th>
+        <th id="share5">0</th>
+        <th  id="distrDist5">0</th>
+    </tr>
+    <tr> <!-- rowSum -->
+        <th></th>
+        <th>SUM Talpertie</th>
+        <th>
+            <label id="sumLdm">0</label>
+        </th>
+        <th id="sumShare">0</th>
+        <th  id="sumrDist">0</th>
+    </tr>
+
+</table>
+
+<script>
+    
+    function myFunction() {
+
+        // LDM
+        let ldmCount1 = Number(document.getElementById('ldm1').value);
+        let ldmCount2 = Number(document.getElementById('ldm2').value);
+        let ldmCount3 = Number(document.getElementById('ldm3').value);
+        let ldmCount4 = Number(document.getElementById('ldm4').value);
+        let ldmCount5 = Number(document.getElementById('ldm5').value);
+        let sumLdm = ldmCount1 + ldmCount2 + ldmCount3 + ldmCount4 + ldmCount5;
+
+        document.getElementById('sumLdm').innerHTML = sumLdm;
+        
+        let share1 = Number((ldmCount1 / sumLdm).toFixed(2));
+        let share2 = Number((ldmCount2 / sumLdm).toFixed(2));
+        let share3 = Number((ldmCount3 / sumLdm).toFixed(2));
+        let share4 = Number((ldmCount4 / sumLdm).toFixed(2));
+        let share5 = Number((ldmCount5 / sumLdm).toFixed(2));
+        let sumShare = (share1 + share2 + share3 + share4 + share5).toFixed(2);
+
+        document.getElementById('share1').innerHTML = share1;
+        document.getElementById('share2').innerHTML = share2;
+        document.getElementById('share3').innerHTML = share3;
+        document.getElementById('share4').innerHTML = share4;
+        document.getElementById('share5').innerHTML = share5;
+
+        document.getElementById('sumShare').innerHTML = sumShare;
+
+        let distance = Number(document.getElementById('EnterDistanceKm').value);
+        let distribDistance1 = Math.round(distance * share1);
+        let distribDistance2 = Math.round(distance * share2);
+        let distribDistance3 = Math.round(distance * share3);
+        let distribDistance4 = Math.round(distance * share4);
+        let distribDistance5 = Math.round(distance * share5);
+
+        let sumDistribDist = distribDistance1 + distribDistance2 + distribDistance3 + distribDistance4 + distribDistance5;
+
+        document.getElementById('distrDist1').innerHTML = distribDistance1;
+        document.getElementById('distrDist2').innerHTML = distribDistance2;
+        document.getElementById('distrDist3').innerHTML = distribDistance3;
+        document.getElementById('distrDist4').innerHTML = distribDistance4;
+        document.getElementById('distrDist5').innerHTML = distribDistance5;
+
+        document.getElementById('sumrDist').innerHTML = sumDistribDist;
+
+
+
+    }
+    
+   
+</script>
+ 
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+
+
+</body>
+</html>
