@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def index(request):
     #return HttpResponse("Hello from the Shop app")
     return render(request, 'index.html')
+
+# info for driver
+def info(request):
+    return render(request, 'info.html')
