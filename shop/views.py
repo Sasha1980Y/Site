@@ -15,7 +15,19 @@ def info(request):
 def menu(request):
     return render(request, 'menu.html')
 
-# POI
+# menu teilparty
+def index2(request):
+    return render(request, 'index2.html')
+
+# menu roads payments
+def menu_roads_pay(request):
+    return render(request, 'menu_roads_pay.html')
+
+# menu roads payments
+def AT_road_pay(request):
+    return render(request, 'RoadPayInfo/AT_road_pay.html')
+
+# POI/
 def poi(request):
     lat = +49.100565
     lon = +5.258491
