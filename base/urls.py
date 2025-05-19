@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #yakovenko next string i add
     path('shop/', include('shop.urls'))
-
 ]

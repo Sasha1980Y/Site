@@ -27,6 +27,10 @@ def menu_roads_pay(request):
 def AT_road_pay(request):
     return render(request, 'RoadPayInfo/AT_road_pay.html')
 
+# menu DKV setting
+def DKV_box_setting(request):
+    return render(request, 'RoadPayInfo/DKV_box_setting.html')
+
 # POI/
 def poi(request):
     lat = +49.100565
