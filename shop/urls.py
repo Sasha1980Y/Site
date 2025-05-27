@@ -9,5 +9,6 @@ urlpatterns = [
     path('index2/', views.index2, name='index2'),
     path('menu_roads_pay/', views.menu_roads_pay, name='menu_roads_pay'),
     path('RoadPayInfo/AT_road_pay', views.AT_road_pay, name='AT_road_pay'),
-    path('RoadPayInfo/DKV_box_setting', views.DKV_box_setting, name='DKV_box_setting')
+    path('RoadPayInfo/DKV_box_setting', views.DKV_box_setting, name='DKV_box_setting'),
+    path('RoadPayInfo/HR_road_pay', views.HR_road_pay, name='HR_road_pay'),
 ]
