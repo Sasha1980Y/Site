@@ -31,6 +31,10 @@ def AT_road_pay(request):
 def HR_road_pay(request):
     return render(request, 'RoadPayInfo/HR_road_pay.html')
 
+# CH roads payments
+def CH_road_pay(request):
+    return render(request, 'RoadPayInfo/CH_road_pay.html')
+
 # menu DKV setting
 def DKV_box_setting(request):
     return render(request, 'RoadPayInfo/DKV_box_setting.html')
