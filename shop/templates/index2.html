@@ -1,13 +1,9 @@
 <!-- page with table calculation party -->
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>start page</title>
-
-    
+    <title>Calculation Table</title>
 </head>
 <style>
     table,th,td {
@@ -30,7 +26,6 @@
 </style>
 <body>
 <h1> Calculation Table / Вычислительная таблица</h1>
-
 <table style="width: 100%">
     <tr>  <!-- row1 -->
         <th>Planned Distance, km</th>
@@ -105,9 +100,7 @@
     </tr>
 
 </table>
-
 <script>
-    
     function myFunction() {
 
         // LDM
@@ -120,12 +113,12 @@
 
         document.getElementById('sumLdm').innerHTML = sumLdm;
         
-        let share1 = Number((ldmCount1 / sumLdm).toFixed(2));
-        let share2 = Number((ldmCount2 / sumLdm).toFixed(2));
-        let share3 = Number((ldmCount3 / sumLdm).toFixed(2));
-        let share4 = Number((ldmCount4 / sumLdm).toFixed(2));
-        let share5 = Number((ldmCount5 / sumLdm).toFixed(2));
-        let sumShare = (share1 + share2 + share3 + share4 + share5).toFixed(2);
+        let share1 = Number((ldmCount1 / sumLdm).toFixed(3));
+        let share2 = Number((ldmCount2 / sumLdm).toFixed(3));
+        let share3 = Number((ldmCount3 / sumLdm).toFixed(3));
+        let share4 = Number((ldmCount4 / sumLdm).toFixed(3));
+        let share5 = Number((ldmCount5 / sumLdm).toFixed(3));
+        let sumShare = Number((share1 + share2 + share3 + share4 + share5).toFixed(3));
 
         document.getElementById('share1').innerHTML = share1;
         document.getElementById('share2').innerHTML = share2;
@@ -133,7 +126,7 @@
         document.getElementById('share4').innerHTML = share4;
         document.getElementById('share5').innerHTML = share5;
 
-        document.getElementById('sumShare').innerHTML = sumShare;
+        document.getElementById('sumShare').innerHTML = sumShare.toFixed(3);
 
         let distance = Number(document.getElementById('EnterDistanceKm').value);
         let distribDistance1 = Math.round(distance * share1);
@@ -151,20 +144,36 @@
         document.getElementById('distrDist5').innerHTML = distribDistance5;
 
         document.getElementById('sumrDist').innerHTML = sumDistribDist;
+    }
 
+    function reset() {
+        document.getElementById("EnterDistanceKm").value = "0";
+        document.getElementById("ldm1").value = "0";
+        document.getElementById("ldm2").value = "0";
+        document.getElementById("ldm3").value = "0";
+        document.getElementById("ldm4").value = "0";
+        document.getElementById("ldm5").value = "0";
 
+         document.getElementById("share1").innerHTML = "0";
+         document.getElementById("share2").innerHTML = "0";
+         document.getElementById("share3").innerHTML = "0";
+         document.getElementById("share4").innerHTML = "0";
+         document.getElementById("share5").innerHTML = "0";
 
+         document.getElementById("distrDist1").innerHTML = "0";
+         document.getElementById("distrDist2").innerHTML = "0";
+         document.getElementById("distrDist3").innerHTML = "0";
+         document.getElementById("distrDist4").innerHTML = "0";
+         document.getElementById("distrDist5").innerHTML = "0";
+
+         document.getElementById("sumLdm").innerHTML = "0";
+         document.getElementById("sumShare").innerHTML = "0";
+         document.getElementById("sumrDist").innerHTML = "0";
     }
     
    
 </script>
- 
-
-<button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-
-
+<button onclick="myFunction()">Calculation</button><br>
+<button onclick="reset()">Reset</button>
 </body>
 </html>
