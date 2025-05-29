@@ -23,9 +23,13 @@ def index2(request):
 def menu_roads_pay(request):
     return render(request, 'menu_roads_pay.html')
 
-# menu roads payments
+# AT roads payments
 def AT_road_pay(request):
     return render(request, 'RoadPayInfo/AT_road_pay.html')
+
+# GB roads payments
+def GB_road_pay(request):
+    return render(request, 'RoadPayInfo/GB_road_pay.html')
 
 # HR roads payments
 def HR_road_pay(request):
@@ -53,6 +57,14 @@ def poi(request):
         location=[49.148157,8.553572],
         tooltip="Base Bruchsal",
         popup="49.148157,8.553572",
+        icon=folium.Icon(color="green"),
+    ).add_to(m)
+
+    # add marker base Vatry
+    folium.Marker(
+        location=[48.7817780, 4.2164220],
+        tooltip="Base Vatry",
+        popup="48.7817780, 4.2164220",
         icon=folium.Icon(color="green"),
     ).add_to(m)
 
@@ -88,7 +100,7 @@ def poi(request):
         icon=folium.Icon(color="green"),
     ).add_to(m)
 
-    #add line  N4
+    # add line  N4
     locations = [
         [48.77346, 7.241291],
         [48.572703, 6.713767],
@@ -105,6 +117,52 @@ def poi(request):
         weight=8,
         opacity=1,
         smooth_factor=0,
+        tooltip="N4",
+    ).add_to(m)
+
+    # add line  N0
+    locationsN10 = [
+        [46.538374, 0.28718],
+        [46.299199, 0.174632],
+        [45.701427, 0.179026],
+        [45.478561,-0.154769],
+        [45.022119,-0.434587],
+
+    ]
+
+    folium.PolyLine(
+        locations=locationsN10,
+        color="red",
+        weight=8,
+        opacity=1,
+        smooth_factor=0,
+        tooltip="N10",
+    ).add_to(m)
+
+    # add line  GreenWay
+    locationsGreen = [
+        [46.756029, 4.825213],
+        [46.484222, 4.149306],
+        [46.52198, 3.486561],
+        [46.329667, 2.954459],
+        [46.379259, 2.609438],
+        [46.205707, 1.390922],
+        [45.89334, 1.291312],
+        [45.855114,1.156059],
+        [45.869034, 0.706968],
+        [45.696466, 0.184519],
+        [45.471282,-0.133301],
+        [45.017727,-0.426425],
+
+    ]
+
+    folium.PolyLine(
+        locations=locationsGreen,
+        color="orange",
+        weight=8,
+        opacity=1,
+        smooth_factor=0,
+        tooltip="Зеленка (N70, A79, A71, N145, A20, N141, N10)",
     ).add_to(m)
 
     #*********

@@ -12,4 +12,5 @@ urlpatterns = [
     path('RoadPayInfo/DKV_box_setting', views.DKV_box_setting, name='DKV_box_setting'),
     path('RoadPayInfo/HR_road_pay', views.HR_road_pay, name='HR_road_pay'),
     path('RoadPayInfo/CH_road_pay', views.CH_road_pay, name='CH_road_pay'),
+    path('RoadPayInfo/GB_road_pay', views.GB_road_pay, name='GB_road_pay'),
 ]
