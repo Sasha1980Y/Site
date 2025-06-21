@@ -173,3 +173,6 @@ def poi(request):
 
     return render(request, 'poi.html', context )
 
+# link sites
+def link_sites(request):
+    return render(request, 'link_sites.html')
