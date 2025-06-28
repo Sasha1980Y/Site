@@ -11,9 +11,8 @@
          line-height: 1.5;
          }
       P {
-        line-height: 2.5em;
+        line-height: 3.0em;
         }
-
   </style>
 
 </head>
@@ -29,16 +28,54 @@
             <a href="https://www.google.com/maps/d/edit?mid=1cisVlUh-BN9ldp-KDKX_ApzFq-tgTvUv&usp=sharing">Продуктовый магазин с возможностью подъехать</a> <br>
             <a href="https://www.google.com/maps/d/edit?mid=10Blsylj2M5EGrA1Zq3GSJb0Nn7Ak-dg&ll=45.573237239464234%2C11.45424300000002&z=4">Parking, промзона</a> <br>
             <a href="https://www.eurovignettes.eu/portal/en/booking/booking">Eurovinettes</a> <br>
+                <div class="container mt-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Инструкция
+            </button>
+            </div>
+        </p>
+        <p>
             <a href="https://www.hgvlevy.service.gov.uk/ords/pwslive/">GB vinette</a> <br>
             <a href="https://vejafgifter.dk/en/digital-kmtoll-ticket/#">Vinette DK</a> <br>
         </p>
     </div>
-     <div class="p-2 bg-info">
-         <p3>
-             Обратная связь: - <br>
-             Whatsapp, Viber, Telegram:+ 48 729 523 518 <br>
-         </p3>
-     </div>
+      <!-- The Modal button Instruction-->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header button Instruction-->
+      <div class="modal-header">
+        <h4 class="modal-title">Инструкция</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body // button Instruction-->
+      <div class="modal-body">
+        <p>
+            1 Выбираем дату (если больше 3 дней, можно взять 7 дней по цене 3-х)<br>
+            2.1 Licence plate country страна регистрации авто<br>
+            2.2 Licence plate number регистрационный номер<br>
+            2.3 Axle class количество осей (с полуприцепом 4 или больше)<br>
+            2.4 Emission class (CO2 class 1 Euro 6 обычно)<br>
+            5 Fuel/Fleet card (для оплаты по DKV)<br>
+            6.1 Card number (номер карты)<br>
+            6.2 Valid until (mm/yy) (до когда действительна карта)<br>
+            7.1 Please enter the characters (проходим проверку CAPTCHA CODE)<br>
+            7.2 Ставим галочку для принятия условий покупки I accept the General Terms and Conditions.<br>
+            7.3 Нажимаем кнопку Buy - купить<br>
+            8 Скачиваем подтверждение / Делаем скриншот с номером Eurovignette number<br>
+        </p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 </div>
 
