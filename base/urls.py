@@ -19,5 +19,6 @@ from django.urls import path, include #yakovenko include  add
 urlpatterns = [
     path('admin/', admin.site.urls),
     #yakovenko next string i add
-    path('shop/', include('shop.urls'))
+    path('shop/', include('shop.urls')),
+    path('', include('shop.urls')),
 ]
